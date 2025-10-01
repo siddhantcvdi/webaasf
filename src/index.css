@@ -1,0 +1,174 @@
+/* Modern CSS Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.4;
+  color: #2c3e50;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  height: 100vh;
+  margin: 0;
+  padding: 10px;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: all 0.6s ease;
+}
+
+body.pure-html {
+  font-family: Times, serif;
+  background: white;
+  color: black;
+  line-height: 1.2;
+  animation: none;
+}
+
+body.css-stage {
+  animation: rainbow-madness 3s infinite;
+}
+
+body.js-stage {
+  animation: chaotic-colors 1.5s infinite, disco-strobe 0.8s infinite;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.App {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Compact typography */
+h1, h2, h3 {
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin-top: 0.8rem;
+}
+
+p {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+ul {
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.2rem;
+  font-size: 0.9rem;
+}
+
+/* Enhanced button styling */
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 12px 24px;
+  margin: 8px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  color: #2c3e50;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Absurd background animations */
+@keyframes rainbow-madness {
+  0% { background: linear-gradient(45deg, #ff0000, #ff8000); }
+  10% { background: linear-gradient(90deg, #ff8000, #ffff00); }
+  20% { background: linear-gradient(135deg, #ffff00, #80ff00); }
+  30% { background: linear-gradient(180deg, #80ff00, #00ff00); }
+  40% { background: linear-gradient(225deg, #00ff00, #00ff80); }
+  50% { background: linear-gradient(270deg, #00ff80, #00ffff); }
+  60% { background: linear-gradient(315deg, #00ffff, #0080ff); }
+  70% { background: linear-gradient(360deg, #0080ff, #0000ff); }
+  80% { background: linear-gradient(45deg, #0000ff, #8000ff); }
+  90% { background: linear-gradient(90deg, #8000ff, #ff00ff); }
+  100% { background: linear-gradient(135deg, #ff00ff, #ff0080); }
+}
+
+@keyframes chaotic-colors {
+  0% { background: radial-gradient(circle, #ff1493, #00ff00, #0000ff); }
+  16% { background: radial-gradient(ellipse, #ff4500, #ff1493, #9400d3); }
+  32% { background: radial-gradient(circle, #00ced1, #ffd700, #ff6347); }
+  48% { background: radial-gradient(ellipse, #32cd32, #ff69b4, #1e90ff); }
+  64% { background: radial-gradient(circle, #ff0000, #ffff00, #00ff00); }
+  80% { background: radial-gradient(ellipse, #9932cc, #ff8c00, #20b2aa); }
+  100% { background: radial-gradient(circle, #dc143c, #00bfff, #ffa500); }
+}
+
+@keyframes disco-strobe {
+  0% { filter: brightness(1) saturate(1); }
+  25% { filter: brightness(2) saturate(3) hue-rotate(90deg); }
+  50% { filter: brightness(0.5) saturate(2) hue-rotate(180deg); }
+  75% { filter: brightness(1.5) saturate(4) hue-rotate(270deg); }
+  100% { filter: brightness(1) saturate(1) hue-rotate(360deg); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  button {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+  }
+}
