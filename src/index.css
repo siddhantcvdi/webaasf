@@ -24,6 +24,62 @@ body.pure-html {
   color: black;
   line-height: 1.2;
   animation: none;
+  padding: 0;
+  margin: 0;
+}
+
+body.pure-html * {
+  all: unset;
+  display: revert;
+  box-sizing: revert;
+}
+
+body.pure-html h1,
+body.pure-html h2,
+body.pure-html h3 {
+  font-weight: bold;
+  margin: 0;
+}
+
+body.pure-html h1 {
+  font-size: 2em;
+}
+
+body.pure-html h2 {
+  font-size: 1.5em;
+}
+
+body.pure-html h3 {
+  font-size: 1.17em;
+}
+
+body.pure-html p {
+  margin: 1em 0;
+}
+
+body.pure-html ul {
+  margin: 1em 0;
+  padding-left: 40px;
+}
+
+body.pure-html li {
+  display: list-item;
+}
+
+body.pure-html button {
+  display: inline-block;
+  cursor: pointer;
+}
+
+body.pure-html #root {
+  display: block;
+  height: auto;
+  padding: 8px;
+}
+
+body.pure-html .App {
+  max-width: none;
+  margin: 0;
 }
 
 body.css-stage {
@@ -86,38 +142,6 @@ li {
 }
 
 /* Enhanced button styling */
-button {
-  font-family: inherit;
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 12px 24px;
-  margin: 8px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(145deg, #ffffff, #f0f0f0);
-  color: #2c3e50;
-}
-
-button:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(145deg, #f8f9fa, #e9ecef);
-}
-
-button:active:not(:disabled) {
-  transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-}
 
 /* Absurd background animations */
 @keyframes rainbow-madness {

@@ -38,14 +38,7 @@ const MasterpieceDemo = () => {
     switch (stage) {
       case 'html':
         return {
-          ...baseStyles,
-          // Pure HTML - no styling at all
-          backgroundColor: 'transparent',
-          color: 'inherit',
-          fontFamily: 'inherit',
-          border: 'none',
-          boxShadow: 'none',
-          borderRadius: '0',
+          // Absolutely no styling - pure HTML
         };
       
       case 'css':
@@ -137,8 +130,23 @@ const MasterpieceDemo = () => {
     }
   };
 
+  const getContainerStyles = () => {
+    if (stage === 'html') {
+      return {}; // Absolutely no styling for pure HTML
+    }
+    return {
+      padding: '10px',
+      fontFamily: 'inherit',
+      height: '100vh',
+      overflow: 'hidden',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center'
+    };
+  };
+
   return (
-    <div style={{ padding: '10px', fontFamily: 'inherit', height: '100vh', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+    <div style={getContainerStyles()}>
       {/* CSS Keyframes for animations */}
       <style>
         {`
@@ -246,8 +254,7 @@ const MasterpieceDemo = () => {
           }
 
           .controls-html {
-            text-align: center;
-            margin-bottom: 15px;
+            /* No styling for pure HTML */
           }
 
           .reset-container {
@@ -305,35 +312,12 @@ const MasterpieceDemo = () => {
           (or humanity will surely collapse):
         </p>
 
-        <h2>🚨 URGENT PRIORITIES 🚨</h2>
+        <h2>🚨 URGENT 🚨</h2>
         <ul>
-          <li>✅ Convince my houseplant to stop judging my life choices</li>
-          <li>❌ Teach my rubber duck advanced calculus</li>
-          <li>❌ Reorganize my sock drawer by emotional intensity</li>
-          <li>❌ Write a strongly worded letter to gravity about being too clingy</li>
-          <li>✅ Have a serious conversation with my WiFi about its commitment issues</li>
-          <li>❌ Train my cat to use Zoom for important meetings</li>
-          <li>❌ Convince my neighbors that my 3 AM clarinet practice is "therapeutic"</li>
-        </ul>
-
-        <h2>🎯 MEDIUM PRIORITY</h2>
-        <ul>
-          <li>Start a podcast about the philosophical implications of toast landing butter-side down</li>
-          <li>Invent a new dance called "The Existential Crisis"</li>
-          <li>Write a 500-page manifesto on why pineapple belongs on pizza</li>
-          <li>Become fluent in dolphin by Thursday</li>
-          <li>Convince my washing machine to stop eating my socks</li>
-          <li>Master the ancient art of parallel parking</li>
-        </ul>
-
-        <h2>🏃‍♂️ SOMEDAY/MAYBE</h2>
-        <ul>
-          <li>Learn to communicate with houseplants (update: making progress with the fern)</li>
-          <li>Start a support group for people addicted to buying phone chargers</li>
-          <li>Write a cookbook called "Gourmet Meals You Can Make While Crying"</li>
-          <li>Become a professional Netflix category creator</li>
-          <li>Train squirrels to deliver my mail</li>
-          <li>Perfect my impression of a functional adult</li>
+          <li>Bunk Classes🙄</li>
+          <li>Eat🍴</li>
+          <li>Sleep😴</li>
+          <li>Repeat🔁</li>
         </ul>
       </div>
 
